@@ -1,0 +1,499 @@
+starting build
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+make: *** No rule to make target 'clean'.  Stop.
+Trying to build project using make
+make
+make: *** No targets specified and no makefile found.  Stop.
+gcc xv6_fsck.c -o xv6_fsck
+
+
+test build PASSED
+ (build project using make)
+ file 'xv6_fsck' exists after make clean, removing
+
+starting Good
+
+**********************************************************************
+
+Test Good
+run on a good filesystem
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Good
+Failure: ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+
+test Good FAILED (0 of 5)
+ (run on a good filesystem)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+starting Goodrefcnt
+
+**********************************************************************
+
+Test Goodrefcnt
+run on fs with only good reference counts
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Goodrefcnt
+Failure: ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+
+test Goodrefcnt FAILED (0 of 6)
+ (run on fs with only good reference counts)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+starting Nonexistant
+
+**********************************************************************
+
+Test Nonexistant
+run on a nonexistant filesystem
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Nonexistant
+
+
+test Nonexistant PASSED (5 of 5)
+ (run on a nonexistant filesystem)
+
+starting Badroot
+
+**********************************************************************
+
+Test Badroot
+run on a filesystem with a root directory in bad location
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Badroot
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: root directory does not exist.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Badroot FAILED (0 of 5)
+ (run on a filesystem with a root directory in bad location)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Badinode
+
+**********************************************************************
+
+Test Badinode
+run on a filesystem with a bad type in an inode
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Badinode
+
+
+test Badinode PASSED (5 of 5)
+ (run on a filesystem with a bad type in an inode)
+
+starting Badaddr
+
+**********************************************************************
+
+Test Badaddr
+run on a filesystem with a bad direct address in an inode
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Badaddr
+
+
+test Badaddr PASSED (5 of 5)
+ (run on a filesystem with a bad direct address in an inode)
+
+starting Badindir1
+
+**********************************************************************
+
+Test Badindir1
+run on a filesystem with a bad indirect address in an inode
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Badindir1
+
+
+test Badindir1 PASSED (5 of 5)
+ (run on a filesystem with a bad indirect address in an inode)
+
+starting Badroot2
+
+**********************************************************************
+
+Test Badroot2
+run on a filesystem with a bad root directory in good location
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Badroot2
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: root directory does not exist.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Badroot2 FAILED (0 of 5)
+ (run on a filesystem with a bad root directory in good location)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Badfmt
+
+**********************************************************************
+
+Test Badfmt
+run on a filesystem without . or .. directories
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Badfmt
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: directory not properly formatted.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Badfmt FAILED (0 of 5)
+ (run on a filesystem without . or .. directories)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Mismatch
+
+**********************************************************************
+
+Test Mismatch
+run on a filesystem with .. pointing to the wrong directory
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Mismatch
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: parent directory mismatch.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Mismatch FAILED (0 of 6)
+ (run on a filesystem with .. pointing to the wrong directory)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Mrkfree
+
+**********************************************************************
+
+Test Mrkfree
+run on a filesystem with an inuse direct block marked free
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Mrkfree
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: address used by inode but marked free in bitmap.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Mrkfree FAILED (0 of 5)
+ (run on a filesystem with an inuse direct block marked free)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Indirfree
+
+**********************************************************************
+
+Test Indirfree
+run on a filesystem with an inuse indirect block marked free
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Indirfree
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: address used by inode but marked free in bitmap.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Indirfree FAILED (0 of 5)
+ (run on a filesystem with an inuse indirect block marked free)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Mrkused
+
+**********************************************************************
+
+Test Mrkused
+run on a filesystem with a free block marked used
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Mrkused
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: bitmap marks block in use but it is not in use.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Mrkused FAILED (0 of 5)
+ (run on a filesystem with a free block marked used)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Addronce
+
+**********************************************************************
+
+Test Addronce
+run on a filesystem with an address used more than once
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Addronce
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: direct address used more than once.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Addronce FAILED (0 of 5)
+ (run on a filesystem with an address used more than once)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Imrkused
+
+**********************************************************************
+
+Test Imrkused
+run with inode marked used, but not referenced in a directory
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Imrkused
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: inode marked use but not found in a directory.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Imrkused FAILED (0 of 6)
+ (run with inode marked used, but not referenced in a directory)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Imrkfree
+
+**********************************************************************
+
+Test Imrkfree
+run with inode marked free, but referenced in a directory
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Imrkfree
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: inode referred to in directory but marked free.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Imrkfree FAILED (0 of 5)
+ (run with inode marked free, but referenced in a directory)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Badrefcnt
+
+**********************************************************************
+
+Test Badrefcnt
+run on fs which has an inode with a bad reference count
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Badrefcnt
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: bad reference count for file.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Badrefcnt FAILED (0 of 6)
+ (run on fs which has an inode with a bad reference count)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Badindir2
+
+**********************************************************************
+
+Test Badindir2
+run on a filesystem with a bad indirect address in an inode
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Badindir2
+
+
+test Badindir2 PASSED (5 of 5)
+ (run on a filesystem with a bad indirect address in an inode)
+
+starting Dironce
+
+**********************************************************************
+
+Test Dironce
+run on fs with a directory appearing more than once
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Dironce
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: directory appears more than once in file system.\n"
+Got:      "ERROR: bad direct address in inode.\n"
+
+
+test Dironce FAILED (0 of 6)
+ (run on fs with a directory appearing more than once)
+ ./xv6_fsck gave incorrect standard error.
+
+starting Goodrm
+
+**********************************************************************
+
+Test Goodrm
+run on good fs with a file removed and a new directory created
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Goodrm
+Failure: ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+
+test Goodrm FAILED (0 of 5)
+ (run on good fs with a file removed and a new directory created)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+starting Goodrm2
+
+**********************************************************************
+
+Test Goodrm2
+run on good fs with a new directory created and then a file removed
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Goodrm2
+Failure: ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+
+test Goodrm2 FAILED (0 of 5)
+ (run on good fs with a new directory created and then a file removed)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+starting Goodlink
+
+**********************************************************************
+
+Test Goodlink
+run on good fs with some hard links and a linked file removed
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Goodlink
+Failure: ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+
+test Goodlink FAILED (0 of 5)
+ (run on good fs with some hard links and a linked file removed)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+starting Goodlarge
+
+**********************************************************************
+
+Test Goodlarge
+run on large good fs
+
+**********************************************************************
+/tmp/tmp5XDVC6/p/./xv6_fsck /u/c/s/cs537-1/ta/tests/5a/images/Goodlarge
+Failure: ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+
+test Goodlarge FAILED (0 of 5)
+ (run on large good fs)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+ file 'xv6_fsck' exists after make clean, removing
+
+test Good FAILED (0 of 5)
+ (run on a good filesystem)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+test Goodrefcnt FAILED (0 of 6)
+ (run on fs with only good reference counts)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+test Nonexistant PASSED (5 of 5)
+ (run on a nonexistant filesystem)
+
+test Badroot FAILED (0 of 5)
+ (run on a filesystem with a root directory in bad location)
+ ./xv6_fsck gave incorrect standard error.
+
+test Badinode PASSED (5 of 5)
+ (run on a filesystem with a bad type in an inode)
+
+test Badaddr PASSED (5 of 5)
+ (run on a filesystem with a bad direct address in an inode)
+
+test Badindir1 PASSED (5 of 5)
+ (run on a filesystem with a bad indirect address in an inode)
+
+test Badroot2 FAILED (0 of 5)
+ (run on a filesystem with a bad root directory in good location)
+ ./xv6_fsck gave incorrect standard error.
+
+test Badfmt FAILED (0 of 5)
+ (run on a filesystem without . or .. directories)
+ ./xv6_fsck gave incorrect standard error.
+
+test Mismatch FAILED (0 of 6)
+ (run on a filesystem with .. pointing to the wrong directory)
+ ./xv6_fsck gave incorrect standard error.
+
+test Mrkfree FAILED (0 of 5)
+ (run on a filesystem with an inuse direct block marked free)
+ ./xv6_fsck gave incorrect standard error.
+
+test Indirfree FAILED (0 of 5)
+ (run on a filesystem with an inuse indirect block marked free)
+ ./xv6_fsck gave incorrect standard error.
+
+test Mrkused FAILED (0 of 5)
+ (run on a filesystem with a free block marked used)
+ ./xv6_fsck gave incorrect standard error.
+
+test Addronce FAILED (0 of 5)
+ (run on a filesystem with an address used more than once)
+ ./xv6_fsck gave incorrect standard error.
+
+test Imrkused FAILED (0 of 6)
+ (run with inode marked used, but not referenced in a directory)
+ ./xv6_fsck gave incorrect standard error.
+
+test Imrkfree FAILED (0 of 5)
+ (run with inode marked free, but referenced in a directory)
+ ./xv6_fsck gave incorrect standard error.
+
+test Badrefcnt FAILED (0 of 6)
+ (run on fs which has an inode with a bad reference count)
+ ./xv6_fsck gave incorrect standard error.
+
+test Badindir2 PASSED (5 of 5)
+ (run on a filesystem with a bad indirect address in an inode)
+
+test Dironce FAILED (0 of 6)
+ (run on fs with a directory appearing more than once)
+ ./xv6_fsck gave incorrect standard error.
+
+test Goodrm FAILED (0 of 5)
+ (run on good fs with a file removed and a new directory created)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+test Goodrm2 FAILED (0 of 5)
+ (run on good fs with a new directory created and then a file removed)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+test Goodlink FAILED (0 of 5)
+ (run on good fs with some hard links and a linked file removed)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+test Goodlarge FAILED (0 of 5)
+ (run on large good fs)
+ ./xv6_fsck returned incorrect status code. Expected 0 got 1
+
+Passed 6 of 24 tests.
+Overall 6 of 24
+Points 25 of 120

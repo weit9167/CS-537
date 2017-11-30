@@ -1,0 +1,588 @@
+starting build
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+make: *** No rule to make target 'clean'.  Stop.
+Trying to build project using make
+make
+make: *** No targets specified and no makefile found.  Stop.
+gcc xsh.c -o xsh -Wall -std=gnu11
+
+
+test build PASSED
+ (build project using make)
+ file 'xsh' exists after make clean, removing
+
+starting linttest
+
+**********************************************************************
+
+Test linttest
+Lint test for C programming style
+
+**********************************************************************
+/u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py --extensions c,h xsh.c
+xsh.c:15:  Extra space before ( in function call  [whitespace/parens] [4]
+xsh.c:16:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+xsh.c:17:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:18:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:20:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:21:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:30:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:59:  Extra space before ( in function call  [whitespace/parens] [4]
+xsh.c:62:  Missing space after ,  [whitespace/comma] [3]
+xsh.c:64:  Missing space after ,  [whitespace/comma] [3]
+xsh.c:70:  Extra space before ( in function call  [whitespace/parens] [4]
+xsh.c:71:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+xsh.c:85:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+xsh.c:87:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:88:  Missing space before ( in while(  [whitespace/parens] [5]
+xsh.c:89:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:89:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
+xsh.c:91:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+xsh.c:101:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:109:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:118:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:124:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+xsh.c:124:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:136:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+xsh.c:154:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:154:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+xsh.c:163:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:163:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
+xsh.c:165:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:183:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+xsh.c:204:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+xsh.c:234:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:238:  Tab found; better to use spaces  [whitespace/tab] [1]
+xsh.c:239:  Tab found; better to use spaces  [whitespace/tab] [1]
+xsh.c:240:  Tab found; better to use spaces  [whitespace/tab] [1]
+xsh.c:241:  Tab found; better to use spaces  [whitespace/tab] [1]
+xsh.c:250:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:252:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
+xsh.c:262:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:263:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:270:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:271:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:273:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:274:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+xsh.c:277:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
+xsh.c:288:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:321:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:322:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+xsh.c:328:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:329:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+xsh.c:333:  Extra space before ( in function call  [whitespace/parens] [4]
+xsh.c:348:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:382:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+xsh.c:394:  Should have a space between // and comment  [whitespace/comments] [4]
+xsh.c:397:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:406:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:408:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:416:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:423:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:424:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+xsh.c:424:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+xsh.c:426:  Should have a space between // and comment  [whitespace/comments] [4]
+Done processing xsh.c
+Total errors found: 62
+Failure: /u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py returned incorrect status code. Expected 0 got 1
+
+
+test linttest FAILED (0 of 5)
+ (Lint test for C programming style)
+ /u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py returned incorrect status code. Expected 0 got 1
+
+starting exit
+
+**********************************************************************
+
+Test exit
+run exit
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test exit PASSED (5 of 5)
+ (run exit)
+
+starting exec
+
+**********************************************************************
+
+Test exec
+path should be /bin
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test exec PASSED (5 of 5)
+ (path should be /bin)
+
+starting badexec
+
+**********************************************************************
+
+Test badexec
+run programs that do not exist in /bin
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test badexec PASSED (5 of 5)
+ (run programs that do not exist in /bin)
+
+starting stress
+
+**********************************************************************
+
+Test stress
+stress testing the shell with large number of commands
+
+**********************************************************************
+/u/c/s/cs537-1/ta/tests/2a/ctests/stress/gen -s 1 -n 10000
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test stress PASSED (5 of 5)
+ (stress testing the shell with large number of commands)
+
+starting line
+
+**********************************************************************
+
+Test line
+line with maximum allowed length
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test line PASSED (5 of 5)
+ (line with maximum allowed length)
+
+starting badline
+
+**********************************************************************
+
+Test badline
+a line that is too long
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test badline PASSED (5 of 5)
+ (a line that is too long)
+
+starting badarg
+
+**********************************************************************
+
+Test badarg
+extra argument to xsh
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh /extra
+Failure: ./xsh returned incorrect status code. Expected 1 got -6
+
+
+test badarg FAILED (0 of 5)
+ (extra argument to xsh)
+ ./xsh returned incorrect status code. Expected 1 got -6
+
+starting whitespace
+
+**********************************************************************
+
+Test whitespace
+leading and trailing whitespace, full whitespaces or empty string
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test whitespace PASSED (5 of 5)
+ (leading and trailing whitespace, full whitespaces or empty string)
+
+starting cd
+
+**********************************************************************
+
+Test cd
+cd with argument
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test cd PASSED (5 of 5)
+ (cd with argument)
+
+starting badcd
+
+**********************************************************************
+
+Test badcd
+cd to a bad directory
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test badcd PASSED (5 of 5)
+ (cd to a bad directory)
+
+starting path
+
+**********************************************************************
+
+Test path
+run path and a program that exists in a given path
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test path PASSED (5 of 5)
+ (run path and a program that exists in a given path)
+
+starting path2
+
+**********************************************************************
+
+Test path2
+run path with a long pathname and many different paths
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test path2 PASSED (5 of 5)
+ (run path with a long pathname and many different paths)
+
+starting rdr
+
+**********************************************************************
+
+Test rdr
+simple redirection with no standard error
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test rdr PASSED (10 of 10)
+ (simple redirection with no standard error)
+
+starting rdr2
+
+**********************************************************************
+
+Test rdr2
+simple redirection with standard error
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test rdr2 PASSED (10 of 10)
+ (simple redirection with standard error)
+
+starting badrdr
+
+**********************************************************************
+
+Test badrdr
+bad redirection format
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test badrdr PASSED (5 of 5)
+ (bad redirection format)
+
+starting badrdr2
+
+**********************************************************************
+
+Test badrdr2
+bad redirection that redirects to invalid path
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test badrdr2 PASSED (5 of 5)
+ (bad redirection that redirects to invalid path)
+
+starting herestr
+
+**********************************************************************
+
+Test herestr
+simple here-string without output redirection
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test herestr PASSED (10 of 10)
+ (simple here-string without output redirection)
+
+starting herestr2
+
+**********************************************************************
+
+Test herestr2
+simple here-string with output redirection
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test herestr2 PASSED (10 of 10)
+ (simple here-string with output redirection)
+
+starting badherestr
+
+**********************************************************************
+
+Test badherestr
+bad here-string with no input
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test badherestr PASSED (5 of 5)
+ (bad here-string with no input)
+
+starting badherestr2
+
+**********************************************************************
+
+Test badherestr2
+bad here-string with more than one word
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test badherestr2 PASSED (5 of 5)
+ (bad here-string with more than one word)
+
+starting typebin
+
+**********************************************************************
+
+Test typebin
+type a command in /bin
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test typebin PASSED (5 of 5)
+ (type a command in /bin)
+
+starting typebuiltin
+
+**********************************************************************
+
+Test typebuiltin
+type a built-in command
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test typebuiltin PASSED (5 of 5)
+ (type a built-in command)
+
+starting typeorder
+
+**********************************************************************
+
+Test typeorder
+type a common command in multiple paths
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test typeorder PASSED (5 of 5)
+ (type a common command in multiple paths)
+
+starting badtype
+
+**********************************************************************
+
+Test badtype
+type a bad command
+
+**********************************************************************
+/tmp/tmpfbP7Hr/p/./xsh
+
+
+test badtype PASSED (5 of 5)
+ (type a bad command)
+
+starting valgrindtest
+
+**********************************************************************
+
+Test valgrindtest
+Valgrind test for memory management
+
+**********************************************************************
+Running valgrind
+/usr/bin/valgrind --show-reachable=yes --xml=yes --child-silent-after-fork=yes --undef-value-errors=no --xml-file=/tmp/tmpfbP7Hr/p/vg_summary.xml ./xsh
+[/tmp/tmpfbP7Hr/p]
+0> [/tmp/tmpfbP7Hr/p]
+0> tr is /usr/bin/tr
+[/tmp/tmpfbP7Hr/p]
+0> [/tmp/tmpfbP7Hr/p]
+0> An error has occurred
+[/tmp/tmpfbP7Hr/p]
+1> [/tmp/tmpfbP7Hr/p]
+1> [/afs/cs.wisc.edu/u]
+0> [/afs/cs.wisc.edu/u]
+0> total 54
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 _
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 a
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 b
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 c
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 d
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 e
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 f
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 g
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 h
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 i
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 j
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 k
+drwxr-xr-x 29 root wheel 2048 Jul 10  2006 l
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 m
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 n
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 o
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 p
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 q
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 r
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 s
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 t
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 u
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 v
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 w
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 x
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 y
+drwxr-xr-x 29 root wheel 2048 Apr  7  1995 z
+[/afs/cs.wisc.edu/u]
+0> Valgrind completed in 0.317771911621 seconds
+
+
+test valgrindtest FAILED (0 of 10)
+ (Valgrind test for memory management)
+ Valgrind error, check error section of summary: vg_summary.xml
+
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+ file 'xsh' exists after make clean, removing
+
+test linttest FAILED (0 of 5)
+ (Lint test for C programming style)
+ /u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py returned incorrect status code. Expected 0 got 1
+
+test exit PASSED (5 of 5)
+ (run exit)
+
+test exec PASSED (5 of 5)
+ (path should be /bin)
+
+test badexec PASSED (5 of 5)
+ (run programs that do not exist in /bin)
+
+test stress PASSED (5 of 5)
+ (stress testing the shell with large number of commands)
+
+test line PASSED (5 of 5)
+ (line with maximum allowed length)
+
+test badline PASSED (5 of 5)
+ (a line that is too long)
+
+test badarg FAILED (0 of 5)
+ (extra argument to xsh)
+ ./xsh returned incorrect status code. Expected 1 got -6
+
+test whitespace PASSED (5 of 5)
+ (leading and trailing whitespace, full whitespaces or empty string)
+
+test cd PASSED (5 of 5)
+ (cd with argument)
+
+test badcd PASSED (5 of 5)
+ (cd to a bad directory)
+
+test path PASSED (5 of 5)
+ (run path and a program that exists in a given path)
+
+test path2 PASSED (5 of 5)
+ (run path with a long pathname and many different paths)
+
+test rdr PASSED (10 of 10)
+ (simple redirection with no standard error)
+
+test rdr2 PASSED (10 of 10)
+ (simple redirection with standard error)
+
+test badrdr PASSED (5 of 5)
+ (bad redirection format)
+
+test badrdr2 PASSED (5 of 5)
+ (bad redirection that redirects to invalid path)
+
+test herestr PASSED (10 of 10)
+ (simple here-string without output redirection)
+
+test herestr2 PASSED (10 of 10)
+ (simple here-string with output redirection)
+
+test badherestr PASSED (5 of 5)
+ (bad here-string with no input)
+
+test badherestr2 PASSED (5 of 5)
+ (bad here-string with more than one word)
+
+test typebin PASSED (5 of 5)
+ (type a command in /bin)
+
+test typebuiltin PASSED (5 of 5)
+ (type a built-in command)
+
+test typeorder PASSED (5 of 5)
+ (type a common command in multiple paths)
+
+test badtype PASSED (5 of 5)
+ (type a bad command)
+
+test valgrindtest FAILED (0 of 10)
+ (Valgrind test for memory management)
+ Valgrind error, check error section of summary: vg_summary.xml
+
+
+Passed 24 of 27 tests.
+Overall 24 of 27
+Points 135 of 155

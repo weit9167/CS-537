@@ -1,0 +1,218 @@
+starting build
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+make: *** No rule to make target 'clean'.  Stop.
+Trying to build project using make
+make
+make: *** No targets specified and no makefile found.  Stop.
+
+
+test build PASSED
+ (build project using make)
+
+starting linttest
+
+**********************************************************************
+
+Test linttest
+Lint test for C programming style
+
+**********************************************************************
+/u/c/s/cs537-1/ta/tests/3a/../../lint/cpplint.py --extensions c shm_server_frame.c shm_client_frame.c
+Done processing shm_server_frame.c
+Done processing shm_client_frame.c
+Total errors found: 0
+
+
+test linttest PASSED (10 of 10)
+ (Lint test for C programming style)
+
+starting client_without_server
+
+**********************************************************************
+
+Test client_without_server
+Client should exit gracefully if no server is running
+
+**********************************************************************
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+
+
+test client_without_server PASSED (10 of 10)
+ (Client should exit gracefully if no server is running)
+
+starting one_client
+
+**********************************************************************
+
+Test one_client
+Test basic functionality for one client & server
+
+**********************************************************************
+running server with: /tmp/tmpvFwNlJ/p/shm_server
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+/tmp/tmpvFwNlJ/p/serveroutput.txt
+/tmp/tmpvFwNlJ/p/clientoutput.txt
+
+
+test one_client PASSED (10 of 10)
+ (Test basic functionality for one client & server)
+
+starting two_clients
+
+**********************************************************************
+
+Test two_clients
+Check that 2 clients can run concurrently
+
+**********************************************************************
+running server with: /tmp/tmpvFwNlJ/p/shm_server
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+/tmp/tmpvFwNlJ/p/serveroutput.txt
+/tmp/tmpvFwNlJ/p/clientoutput_0.txt
+/tmp/tmpvFwNlJ/p/clientoutput_1.txt
+
+
+test two_clients 
+ (Check that 2 clients can run concurrently)
+
+starting five_clients
+
+**********************************************************************
+
+Test five_clients
+Check that 5 clients can run concurrently
+
+**********************************************************************
+running server with: /tmp/tmpvFwNlJ/p/shm_server
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+/tmp/tmpvFwNlJ/p/serveroutput.txt
+/tmp/tmpvFwNlJ/p/clientoutput_0.txt
+/tmp/tmpvFwNlJ/p/clientoutput_1.txt
+/tmp/tmpvFwNlJ/p/clientoutput_2.txt
+/tmp/tmpvFwNlJ/p/clientoutput_3.txt
+/tmp/tmpvFwNlJ/p/clientoutput_4.txt
+
+
+test five_clients 
+ (Check that 5 clients can run concurrently)
+
+starting many_clients
+
+**********************************************************************
+
+Test many_clients
+Check that up to 63 clients can run concurrently
+
+**********************************************************************
+running server with: /tmp/tmpvFwNlJ/p/shm_server
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+running client with: /tmp/tmpvFwNlJ/p/shm_client
+/tmp/tmpvFwNlJ/p/serveroutput.txt
+/tmp/tmpvFwNlJ/p/clientoutput_0.txt
+/tmp/tmpvFwNlJ/p/clientoutput_1.txt
+/tmp/tmpvFwNlJ/p/clientoutput_2.txt
+/tmp/tmpvFwNlJ/p/clientoutput_3.txt
+/tmp/tmpvFwNlJ/p/clientoutput_4.txt
+/tmp/tmpvFwNlJ/p/clientoutput_5.txt
+/tmp/tmpvFwNlJ/p/clientoutput_6.txt
+/tmp/tmpvFwNlJ/p/clientoutput_7.txt
+/tmp/tmpvFwNlJ/p/clientoutput_8.txt
+/tmp/tmpvFwNlJ/p/clientoutput_9.txt
+/tmp/tmpvFwNlJ/p/clientoutput_10.txt
+/tmp/tmpvFwNlJ/p/clientoutput_11.txt
+/tmp/tmpvFwNlJ/p/clientoutput_12.txt
+/tmp/tmpvFwNlJ/p/clientoutput_13.txt
+/tmp/tmpvFwNlJ/p/clientoutput_14.txt
+/tmp/tmpvFwNlJ/p/clientoutput_15.txt
+/tmp/tmpvFwNlJ/p/clientoutput_16.txt
+/tmp/tmpvFwNlJ/p/clientoutput_17.txt
+/tmp/tmpvFwNlJ/p/clientoutput_18.txt
+/tmp/tmpvFwNlJ/p/clientoutput_19.txt
+/tmp/tmpvFwNlJ/p/clientoutput_20.txt
+/tmp/tmpvFwNlJ/p/clientoutput_21.txt
+/tmp/tmpvFwNlJ/p/clientoutput_22.txt
+/tmp/tmpvFwNlJ/p/clientoutput_23.txt
+
+test many_clients FAILED (0 of 10)
+ (Check that up to 63 clients can run concurrently)
+ Timelimit (40.0s) exceeded
+
+Skipped 3 tests.
+To keep testing after failing a test, use flag '-c' or '--continue'
+
+/tmp/tmpvFwNlJ/p/clientoutput_24.txt

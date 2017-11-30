@@ -1,0 +1,2755 @@
+README
+echo
+forktest
+grep
+init
+kill
+mkdir
+stressfs
+tester
+usertests
+zombie
+xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
+Version 6 (v6).  xv6 loosely follows the structure and style of v6,
+but is implemented for a modern x86-based multiprocessor using ANSI C.
+ACKNOWLEDGMENTS
+xv6 is inspired by John Lions's Commentary on UNIX 6th Edition (Peer
+to Peer Communications; ISBN: 1-57398-013-7; 1st edition (June 14,
+2000)). See also http://pdos.csail.mit.edu/6.828/2007/v6.html, which
+provides pointers to on-line resources for v6.
+xv6 borrows code from the following sources:
+    JOS (asm.h, elf.h, mmu.h, bootasm.S, ide.c, console.c, and others)
+    Plan 9 (bootother.S, mp.h, mp.c, lapic.c)
+    FreeBSD (ioapic.c)
+    NetBSD (console.c)
+The following people made contributions:
+    Russ Cox (context switching, locking)
+    Cliff Frey (MP)
+    Xiao Yu (MP)
+    Nickolai Zeldovich
+    Austin Clements
+In addition, we are grateful for the patches contributed by Greg
+Price, Yandong Mao, and Hitoshi Mitake.
+The code in the files that constitute xv6 is
+Copyright 2006-2007 Frans Kaashoek, Robert Morris, and Russ Cox.
+ERROR REPORTS
+If you spot errors or have suggestions for improvement, please send
+email to Frans Kaashoek and Robert Morris (kaashoek,rtm@csail.mit.edu). 
+BUILDING AND RUNNING XV6
+To build xv6 on an x86 ELF machine (like Linux or FreeBSD), run "make".
+On non-x86 or non-ELF machines (like OS X, even on x86), you will
+need to install a cross-compiler gcc suite capable of producing x86 ELF
+binaries.  See http://pdos.csail.mit.edu/6.828/2007/tools.html.
+Then run "make TOOLPREFIX=i386-jos-elf-".
+To run xv6, you can use Bochs or QEMU, both PC simulators.
+Bochs makes debugging easier, but QEMU is much faster. 
+To run in Bochs, run "make bochs" and then type "c" at the bochs prompt.
+To run in QEMU, run "make qemu".
+cat: read error
+cat: cannot open %s
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+cat.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+unsigned char
+main
+argv
+argc
+short unsigned int
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+sizetype
+short int
+user/cat.c
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+cat.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+%s%s
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+echo.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short unsigned int
+short int
+argv
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+unsigned char
+main
+argc
+user/echo.c
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+sizetype
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+echo.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+fork test
+fork claimed to work N times!
+wait stopped early
+wait got too many
+fork test OK
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+user
+forktest.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+main
+forktest
+unsigned char
+short unsigned int
+printf
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short int
+user/forktest.c
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+type
+nlink
+size
+forktest.c
+ulib.c
+stosb
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+sleep
+forktest
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+<*u!
+usage: grep pattern [file ...]
+grep: cannot open %s
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+grep.c
+juYgu/g
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+user/grep.c
+pattern
+main
+argc
+text
+unsigned char
+match
+argv
+short unsigned int
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short int
+grep
+matchhere
+sizetype
+matchstar
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+grep.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+matchhere
+mknod
+gets
+getpid
+grep
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+matchstar
+strcmp
+_edata
+_end
+match
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+console
+init: starting sh
+init: fork failed
+init: exec sh failed
+zombie!
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+init.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+unsigned char
+main
+user/init.c
+argv
+wpid
+short unsigned int
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short int
+sizetype
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+init.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+argv
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+usage: kill pid...
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+kill.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+user/kill.c
+short unsigned int
+short int
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+unsigned char
+main
+argc
+argv
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+sizetype
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+kill.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+Usage: ln old new
+link %s %s: failed
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+ln.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short unsigned int
+short int
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+user/ln.c
+unsigned char
+main
+argc
+argv
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+sizetype
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+ln.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+Sj P
+WVSPh
+WVSPh
+[^_]
+ls: cannot open %s
+ls: cannot stat %s
+%s %d %d %d
+ls: path too long
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+include
+ls.c
+types.h
+stat.h
+fs.h
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+path
+main
+uint
+stat
+nlink
+unsigned char
+fmtname
+ushort
+argv
+argc
+short unsigned int
+size
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+user/ls.c
+inum
+short int
+dirent
+sizetype
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+vdst
+atoi
+user/ulib.c
+stosb
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+ls.c
+buf.1113
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+fmtname
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+Ph+(
+Usage: mkdir files...
+mkdir: %s failed to create
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+mkdir.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+argc
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short unsigned int
+short int
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+unsigned char
+main
+user/mkdir.c
+argv
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+sizetype
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+mkdir.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+Ph((
+Usage: rm files...
+rm: %s failed to delete
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+rm.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short unsigned int
+short int
+argv
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+unsigned char
+main
+argc
+user/rm.c
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+sizetype
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+rm.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+<cu_
+<duT
+< uI
+PhS4
+<>uc
+Phk4
+runcmd
+exec %s failed
+open %s failed
+pipe
+console
+cannot cd %s
+fork
+leftovers: %s
+syntax
+missing file for redirection
+parseblock
+syntax - missing )
+too many args
+|)&;
+(null)
+<|>&;()
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+sh.c
+YY1g
+!"]g
+uL0u/I
+<A"g
+=2jY
+g=2l
+=3ng
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+lcmd
+runcmd
+backcmd
+parseredirs
+whitespace
+toks
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+panic
+left
+listcmd
+parsecmd
+execcmd
+user/sh.c
+symbols
+unsigned char
+nbuf
+efile
+short unsigned int
+peek
+fork1
+parseblock
+subcmd
+main
+right
+pipecmd
+getcmd
+mode
+gettoken
+argc
+sizetype
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+nulterminate
+pcmd
+parsepipe
+eargv
+redircmd
+parseexec
+parseline
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+short int
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+sh.c
+buf.1144
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+execcmd
+gets
+getpid
+parsepipe
+parsecmd
+backcmd
+peek
+parseredirs
+gettoken
+malloc
+sleep
+whitespace
+fork1
+nulterminate
+getcmd
+write
+fstat
+kill
+chdir
+parseline
+runcmd
+parseblock
+wait
+symbols
+read
+parseexec
+unlink
+panic
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+pipecmd
+redircmd
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+listcmd
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+stre
+ssfsf
+stressfs starting
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+stressfs.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+path
+main
+unsigned char
+argv
+argc
+short unsigned int
+user/stressfs.c
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short int
+sizetype
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+stressfs.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+** Placeholder program for grading scripts **
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+tester.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short unsigned int
+short int
+user/tester.c
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+unsigned char
+main
+argc
+argv
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+sizetype
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+tester.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+Phda
+Phda
+VUUU
+gfff
+<Cu}
+VUUU
+VUUU
+Ph8d
+Ph)p
+echo
+TESTS
+PASSED
+open test
+open echo failed!
+doesnotexist
+open doesnotexist succeeded!
+open test ok
+small file test
+small
+creat small succeeded; ok
+error: creat small failed!
+aaaaaaaaaa
+error: write aa %d new file failed
+bbbbbbbbbb
+error: write bb %d new file failed
+writes ok
+open small succeeded ok
+error: open small failed!
+read succeeded ok
+read failed
+unlink small failed
+small file test ok
+big files test
+error: creat big failed!
+error: write big file failed
+error: open big failed!
+read only %d blocks from big
+read failed %d
+read content of block %d is %d
+unlink big failed
+big files ok
+many creates, followed by unlink test
+many creates, followed by unlink; ok
+mkdir test
+dir0
+mkdir failed
+chdir dir0 failed
+chdir .. failed
+unlink dir0 failed
+exec test
+exec echo failed
+pipe() failed
+pipe1 oops 1
+pipe1 oops 2
+pipe1 oops 3 total %d
+fork() failed
+pipe1 ok
+preempt: 
+preempt write error
+preempt read error
+kill... 
+wait... 
+preempt ok
+fork failed
+wait wrong pid
+exitwait ok
+mem test
+couldn't allocate mem?!!
+mem ok
+sharedfd
+fstests: cannot open sharedfd for writing
+fstests: write sharedfd failed
+fstests: cannot open sharedfd for reading
+sharedfd ok
+sharedfd oops %d %d
+twofiles test
+create failed
+write failed %d
+wrong char
+wrong length %d
+twofiles ok
+createdelete test
+unlink failed
+oops createdelete %s didn't exist
+oops createdelete %s did exist
+createdelete ok
+unlinkread test
+unlinkread
+create unlinkread failed
+hello
+open unlinkread failed
+unlink unlinkread failed
+unlinkread read failed
+unlinkread wrong data
+unlinkread write failed
+unlinkread ok
+linktest
+create lf1 failed
+write lf1 failed
+link lf1 lf2 failed
+unlinked lf1 but it is still there!
+open lf2 failed
+read lf2 failed
+link lf2 lf2 succeeded! oops
+link non-existant succeeded! oops
+link . lf1 succeeded! oops
+linktest ok
+concreate test
+concreate create %s failed
+concreate weird file %s
+concreate duplicate file %s
+concreate not enough files in directory listing
+concreate ok
+bigdir test
+bigdir create failed
+bigdir link failed
+bigdir unlink failed
+bigdir ok
+subdir test
+subdir mkdir dd failed
+dd/ff
+create dd/ff failed
+unlink dd (non-empty dir) succeeded!
+/dd/dd
+subdir mkdir dd/dd failed
+dd/dd/ff
+create dd/dd/ff failed
+dd/dd/../ff
+open dd/dd/../ff failed
+dd/dd/../ff wrong content
+dd/dd/ffff
+link dd/dd/ff dd/dd/ffff failed
+unlink dd/dd/ff failed
+open (unlinked) dd/dd/ff succeeded
+chdir dd failed
+dd/../../dd
+chdir dd/../../dd failed
+dd/../../../dd
+./..
+chdir ./.. failed
+open dd/dd/ffff failed
+read dd/dd/ffff wrong len
+open (unlinked) dd/dd/ff succeeded!
+dd/ff/ff
+create dd/ff/ff succeeded!
+dd/xx/ff
+create dd/xx/ff succeeded!
+create dd succeeded!
+open dd rdwr succeeded!
+open dd wronly succeeded!
+dd/dd/xx
+link dd/ff/ff dd/dd/xx succeeded!
+link dd/xx/ff dd/dd/xx succeeded!
+link dd/ff dd/dd/ffff succeeded!
+mkdir dd/ff/ff succeeded!
+mkdir dd/xx/ff succeeded!
+mkdir dd/dd/ffff succeeded!
+unlink dd/xx/ff succeeded!
+unlink dd/ff/ff succeeded!
+chdir dd/ff succeeded!
+dd/xx
+chdir dd/xx succeeded!
+unlink dd/ff failed
+unlink non-empty dd succeeded!
+dd/dd
+unlink dd/dd failed
+unlink dd failed
+subdir ok
+bigfile test
+bigfile
+cannot create bigfile
+write bigfile failed
+cannot open bigfile
+read bigfile failed
+short read bigfile
+read bigfile wrong data
+read bigfile wrong total
+bigfile test ok
+fourteen test
+12345678901234
+mkdir 12345678901234 failed
+12345678901234/123456789012345
+mkdir 12345678901234/123456789012345 failed
+123456789012345/123456789012345/123456789012345
+create 123456789012345/123456789012345/123456789012345 failed
+12345678901234/12345678901234/12345678901234
+open 12345678901234/12345678901234/12345678901234 failed
+12345678901234/12345678901234
+mkdir 12345678901234/12345678901234 succeeded!
+123456789012345/12345678901234
+mkdir 12345678901234/123456789012345 succeeded!
+fourteen ok
+rmdot test
+dots
+mkdir dots failed
+chdir dots failed
+rm . worked!
+rm .. worked!
+chdir / failed
+dots/.
+unlink dots/. worked!
+dots/..
+unlink dots/.. worked!
+unlink dots failed!
+rmdot ok
+dir vs file
+dirfile
+create dirfile failed
+chdir dirfile succeeded!
+dirfile/xx
+create dirfile/xx succeeded!
+mkdir dirfile/xx succeeded!
+unlink dirfile/xx succeeded!
+README
+link to dirfile/xx succeeded!
+unlink dirfile failed!
+open . for writing succeeded!
+write . succeeded!
+dir vs file OK
+empty file name
+irefd
+mkdir irefd failed
+chdir irefd failed
+empty file name OK
+fork test
+fork claimed to work 1000 times!
+wait stopped early
+wait got too many
+fork test OK
+sbrk test
+sbrk test failed %d %x %x
+sbrk test fork failed
+sbrk test failed post-fork
+sbrk test failed 640K test, p %x a %x
+sbrk allocated more than 640K, c %x
+sbrk could not deallocate
+sbrk deallocation produced wrong address, a %x c %x
+sbrk re-allocation failed, a %x c %x
+sbrk de-allocation didn't really deallocate
+sbrk was able to re-allocate beyond 640K, c %x
+oops could read %x = %x
+failed sbrk leaked memory
+sbrk test OK
+validate test
+nosuchfile
+link should not succeed
+validate ok
+bss test
+bss test failed
+bss test ok
+bigargs test: failed
+                                                                                                                     
+bigarg test
+bigarg test ok
+bigargtest: fork failed
+usertests starting
+usertests.ran
+already ran user tests -- rebuild fs.img
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+include
+usertests.c
+types.h
+YZBj
+![3j
+!YYY
+!ZZDj
+!Zuu
+YZgY[
+YZY@
+YYYZYYYZYYYZYYYYYYYYYYYYYZZ
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+opentest
+lastaddr
+pfds
+exectest
+dirtest
+bigdir
+createtest
+short int
+bigfile
+sizetype
+exitwait
+sbrktest
+main
+ppid
+uint
+writetest
+forktest
+validateint
+validatetest
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+argc
+rmdot
+ushort
+echoargv
+oldbrk
+iref
+createdelete
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+pid1
+pid2
+pid3
+unsigned char
+dirfile
+linktest
+args
+fname
+short unsigned int
+concreate
+writetest1
+sharedfd
+unlinkread
+pids
+pipe1
+twofiles
+scratch
+bigargtest
+bsstest
+uninit
+inum
+preempt
+subdir
+fourteen
+total
+stdout
+user/usertests.c
+stat
+strchr
+memmove
+vsrc
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+usertests.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+exitwait
+printf
+stdout
+bigargtest
+memmove
+mknod
+gets
+getpid
+pipe1
+iref
+malloc
+sleep
+bigdir
+forktest
+writetest1
+sharedfd
+pipe
+uninit
+dirfile
+write
+bsstest
+echoargv
+fstat
+kill
+validatetest
+rmdot
+chdir
+exectest
+exec
+preempt
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+createtest
+main
+createdelete
+strcmp
+writetest
+sbrktest
+opentest
+subdir
+twofiles
+linktest
+dirtest
+bigfile
+_edata
+_end
+unlinkread
+exit
+atoi
+name
+strlen
+open
+strchr
+concreate
+fourteen
+validateint
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+PhA)
+Phe)
+wc: read error
+%d %d %d %s
+cat: cannot open %s
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+wc.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+main
+inword
+name
+user/wc.c
+unsigned char
+argv
+argc
+short unsigned int
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+short int
+sizetype
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+wc.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+(null)
+0123456789ABCDEF
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+user/usys.S
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+GNU AS 2.26.1
+	buf
+l	neg
+d	ap
+user
+zombie.c
+include
+user
+x86.h
+ulib.c
+types.h
+stat.h
+VXig
+=2=/
+=2iu/
+=2igg/
+user
+usys.S
+user
+include
+printf.c
+types.h
+=@zu
+Kgu/
+user
+include
+umalloc.c
+types.h
+Kgug
+!Y2j
+unsigned char
+/afs/cs.wisc.edu/u/w/e/weit/Desktop/537/P4/xv6_rearranged
+user/zombie.c
+short int
+GNU C11 5.4.0 20160609 -m32 -mtune=generic -march=i686 -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector
+short unsigned int
+main
+stat
+strchr
+memmove
+vsrc
+addr
+strlen
+data
+strcpy
+memset
+uchar
+gets
+strcmp
+uint
+vdst
+atoi
+user/ulib.c
+stosb
+nlink
+size
+printf
+base
+user/printf.c
+printint
+digits
+state
+putc
+sizetype
+header
+user/umalloc.c
+Header
+nbytes
+nunits
+long int
+morecore
+prevp
+Align
+freep
+free
+malloc
+zombie.c
+ulib.c
+stosb
+printf.c
+putc
+printint
+digits.1106
+umalloc.c
+base
+freep
+morecore
+strcpy
+printf
+memmove
+mknod
+gets
+getpid
+malloc
+sleep
+pipe
+write
+fstat
+kill
+chdir
+exec
+wait
+read
+unlink
+fork
+sbrk
+uptime
+__bss_start
+memset
+main
+strcmp
+_edata
+_end
+exit
+atoi
+strlen
+open
+strchr
+mkdir
+close
+free
+.symtab
+.strtab
+.shstrtab
+.text
+.rodata
+.eh_frame
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
